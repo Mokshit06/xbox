@@ -27,7 +27,36 @@ class NavBar extends HTMLElement {
   }
 }
 
+class GridItem extends HTMLElement {
+  constructor() {
+    super();
+
+    const image = this.getAttribute('image') || 'my-games-icon.png';
+    const text = this.getAttribute('text');
+    const full = this.getAttribute('full');
+    const wide = this.getAttribute('wide');
+
+    this.innerHTML = `
+      <div class="wrapper">
+        <img src="./assets/${image}" alt="">
+        ${
+          text
+            ? `
+          <div class="overlay ${full && 'full'} ${wide && 'wide'}">
+            <div class="content">
+              ${text}
+            </div>
+          </div>
+        `
+            : ''
+        }
+      </div>
+    `;
+  }
+}
+
 window.customElements.define('nav-bar', NavBar);
+window.customElements.define('game-item', GridItem);
 
 const time = document.querySelector('.time');
 

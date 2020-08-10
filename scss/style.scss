@@ -151,7 +151,7 @@ nav {
       backdrop-filter: blur(20px) saturate(140%);
       border: 8px solid $deepBlue;
       z-index: 100;
-      box-shadow: 0 0 52px 6px #3789db;
+      box-shadow: 0 0 38px 3px #3789db;
       transform: scale(1.03);
     }
 
@@ -252,9 +252,10 @@ nav {
 
   .content {
     position: absolute;
-    top: 45%;
-    left: 25%;
-    transform: translate(-50%, -50%);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
     color: #fff;
   }
 
@@ -440,4 +441,21 @@ nav {
     box-shadow: 0 0 36px 3px #3789db;
     transform: scale(1.03);
   }
+}
+
+/* 
+
+  Game pass section
+
+*/
+#game-pass {
+  display: flex;
+  background-attachment: fixed;
+  align-items: center;
+  scroll-snap-align: start;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-image: url('../assets/blur-cover.jpg');
+  background-size: cover;
+  height: 100vh;
 }
