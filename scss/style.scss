@@ -1,0 +1,443 @@
+$deepBlue: #418ad4;
+
+@import '_base';
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/* 
+
+  Navbar section
+
+*/
+
+nav {
+  min-height: 8vh;
+  background: transparent;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  justify-items: center;
+  align-items: center;
+  display: grid;
+  position: fixed;
+  width: 100%;
+  font-size: 1.1rem;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: backdrop-filter 300ms;
+}
+
+.scrolled-down {
+  backdrop-filter: blur(15px) brightness(90%);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column-start: 2;
+  width: 90%;
+
+  a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-weight: 450;
+    letter-spacing: 0.7;
+  }
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+
+  img {
+    height: auto;
+    width: 50px;
+    border: 4px solid $deepBlue;
+    border-radius: 50px;
+    margin-right: 2vw;
+  }
+
+  .avatar-info {
+    line-height: 1.5;
+    color: #fff;
+    font-weight: 400;
+
+    p:nth-child(2) {
+      color: #c4c4c4;
+    }
+
+    .gold {
+      font-weight: 700;
+      color: black;
+      mix-blend-mode: screen;
+      background-color: #c4c4c4;
+      border-radius: 50%;
+      padding: 0 5.5px;
+    }
+  }
+}
+
+.nav-info {
+  color: #f8f8f8;
+  font-weight: 450;
+  display: flex;
+  align-items: center;
+  width: 40%;
+  justify-content: space-around;
+}
+
+/* 
+
+  Home section
+
+*/
+
+#home {
+  background-attachment: fixed;
+  background-image: url('../assets/blur-cover.jpg');
+  background-position: center;
+  scroll-snap-align: start;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.header {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+    }
+  }
+}
+
+.options-list {
+  width: 87%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+
+  .option {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: box-shadow 100ms ease-in, scale 200ms ease-in;
+    border: 8px solid transparent;
+
+    &:hover {
+      backdrop-filter: blur(20px) saturate(140%);
+      border: 8px solid $deepBlue;
+      z-index: 100;
+      box-shadow: 0 0 52px 6px #3789db;
+      transform: scale(1.03);
+    }
+
+    .img {
+      background-image: url('../assets/game-forza.jpg');
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 25%;
+    }
+
+    .option-info {
+      padding: 14.8px;
+
+      .option-title {
+        font-weight: 600;
+        color: #cecece;
+        font-size: 1.05rem;
+        letter-spacing: 0.9px;
+        margin-bottom: 0.2rem;
+      }
+
+      .option-subtitle {
+        font-size: 1.01rem;
+        font-weight: 490;
+        color: #e7e7e7b6;
+        letter-spacing: 0.7px;
+      }
+    }
+  }
+}
+
+.recent-games {
+  backdrop-filter: blur(33px) saturate(105%);
+  height: 40vh;
+
+  .games-list {
+    width: 87%;
+    display: grid;
+    padding-top: 4%;
+    grid-template-columns: repeat(14, 1fr);
+    margin: 0 auto;
+    gap: 0.3rem;
+    // .game {
+    //   width: 100%;
+    //   background-position: center;
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    //   padding-top: 62%;
+    //   transition: all 100ms ease-in-out, box-shadow 200ms ease-in,
+    //     scale 300ms ease-out;
+    //   cursor: pointer;
+
+    //   &:hover {
+    //     outline: 8px solid $deepBlue;
+    //     box-shadow: 0 0 49px 5px #3789db, inset 0px -48px 0px 0px #2680da;
+    //     z-index: 2;
+    //     transform: scale(1.02);
+    //   }
+    // }
+    // .game-icon {
+    //   &:hover {
+    //     box-shadow: inset 0px -200px 0px 0px #2680da;
+    //   }
+    // }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  transition: box-shadow 200ms ease-in, scale 300ms ease-out;
+  cursor: pointer;
+
+  &:hover {
+    outline: 9px solid $deepBlue;
+    transform: scale(1.03);
+    z-index: 3;
+    box-shadow: 0 0 49px 5px #3789db;
+
+    .overlay {
+      height: 30%;
+    }
+
+    .full {
+      height: 100%;
+    }
+  }
+
+  img {
+    height: 100%;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .content {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #2680da;
+    width: 100%;
+    height: 0;
+    transition: height 300ms ease;
+    overflow: hidden;
+  }
+
+  .wide {
+    backdrop-filter: blur(50px) brightness(80%);
+    background: transparent;
+  }
+}
+
+/*
+
+  About section
+
+*/
+#about-wrapper {
+  display: flex;
+  background-attachment: fixed;
+  align-items: center;
+  scroll-snap-align: start;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-image: url('../assets/blur-cover.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.about {
+  height: 40vh;
+  width: 80%;
+  display: grid;
+  gap: 0.5rem;
+  align-items: start;
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1.5rem;
+
+  img {
+    margin: 0 0 1.3rem;
+    border-radius: 50%;
+    height: 18vw;
+    border: 10px solid transparent;
+    transition: border 100ms ease, box-shadow 200ms ease;
+
+    &:hover {
+      border: 10px solid $deepBlue;
+      box-shadow: 0 0 36px 3px #3789db;
+    }
+  }
+
+  .info {
+    color: #f8f8f8;
+    line-height: 1.4;
+    letter-spacing: 0.7px;
+    word-spacing: 1.1px;
+    font-size: 1.08rem;
+  }
+}
+
+.invite {
+  margin-top: 1rem;
+
+  p {
+    padding: 14px;
+    margin-bottom: 0.3rem;
+    backdrop-filter: blur(20px) brightness(80%);
+    color: #f8f8f8;
+    cursor: pointer;
+    transition: outline 100ms ease, box-shadow 200ms ease;
+    // border: 10px solid transparent;
+
+    &:hover {
+      z-index: 3;
+      outline: 10px solid $deepBlue;
+      box-shadow: 0 0 36px 3px #3789db;
+    }
+  }
+}
+
+.game-area {
+  margin-top: 1rem;
+  background-image: url('../assets/bane-of-kell.jpg');
+  background-position: center;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  transition: outline 100ms ease, box-shadow 200ms ease;
+
+  &:hover {
+    z-index: 3;
+    outline: 10px solid $deepBlue;
+    box-shadow: 0 0 36px 3px #3789db;
+  }
+
+  .game-name {
+    flex: 1;
+    color: #fff;
+    font-size: 3rem;
+    margin: 1.5rem;
+  }
+
+  .game-info {
+    backdrop-filter: blur(30px) brightness(95%);
+    padding: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    color: #afafaf;
+    font-weight: 400;
+
+    .game-review {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    .p3 {
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+}
+
+/* 
+
+  Pins section
+
+*/
+#pins {
+  display: flex;
+  background-attachment: fixed;
+  align-items: flex-start;
+  scroll-snap-align: start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8vw;
+  background-repeat: no-repeat;
+  background-image: url('../assets/blur-cover.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.heading {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.games-grid {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.add {
+  color: #fff;
+  backdrop-filter: blur(30px) brightness(80%);
+  cursor: pointer;
+  padding: 15px;
+  height: fit-content;
+  transition: scale 100ms ease, box-shadow 200ms;
+
+  &:hover {
+    z-index: 3;
+    outline: 10px solid $deepBlue;
+    box-shadow: 0 0 36px 3px #3789db;
+    transform: scale(1.03);
+  }
+}
