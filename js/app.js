@@ -12,7 +12,7 @@ class NavBar extends HTMLElement {
         </div>
         <div class="nav-links">
           <a href="#">Home</a>
-          <a href="#">Mixer</a>
+          <a href="/library.html">Library</a>
           <a href="#">Community</a>
           <a href="#">Entertainment</a>
           <a href="#">Store</a>
@@ -20,7 +20,7 @@ class NavBar extends HTMLElement {
         <div class="nav-info">
           <i class="fas fa-microphone-slash"></i>
           <i class="fas fa-battery-three-quarters"></i>
-          <p class="time"></p>
+          <p class="nav-time"></p>
         </div>
       </nav>
     `;
@@ -42,7 +42,7 @@ class GridItem extends HTMLElement {
         ${
           text
             ? `
-          <div class="overlay ${full && 'full'} ${wide && 'wide'}">
+          <div class="overlay ${full ? 'full' : ''} ${wide ? 'wide' : ''}">
             <div class="content">
               ${text}
             </div>
@@ -58,15 +58,23 @@ class GridItem extends HTMLElement {
 window.customElements.define('nav-bar', NavBar);
 window.customElements.define('game-item', GridItem);
 
-const time = document.querySelector('.time');
+const time = document.querySelector('.nav-time');
 
 const setTime = () => {
   const today = new Date();
-  const _hours = today.getHours();
+  let _hours = today.getHours();
+  let timePeriod;
+
+  if (_hours > 12) {
+    timePeriod = 'PM';
+    _hours = _hours - 12;
+  } else {
+    timePeriod = 'AM';
+  }
+
   const hours = _hours.toString().length < 2 ? `0${_hours}` : _hours;
-  const _minutes = today.getMinutes();
+  let _minutes = today.getMinutes();
   const minutes = _minutes.toString().length < 2 ? `0${_minutes}` : _minutes;
-  const timePeriod = hours > 12 ? 'PM' : 'AM';
   time.innerText = `${hours}:${minutes} ${timePeriod}`;
 };
 
