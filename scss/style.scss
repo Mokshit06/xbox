@@ -1,11 +1,8 @@
-$deepBlue: #418ad4;
-
 @import '_base';
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
 }
 
 a {
@@ -14,9 +11,20 @@ a {
 
 :root {
   --bg1: url('../assets/blur-cover.jpg');
+  --text-color: #fff;
+  --text-color-light: #f8f8f8;
+  --option-title: #cecece;
+  --option-subtitle: #e7e7e7b6;
+  --box-shadow: #3789db;
+  --box-border: #418ad4;
+  --overlay: #2680da;
+  --blur-dark: brightness(80%);
+  --blur-light: brightness(70%);
+  --theme: #232323;
 }
 
 @import '_navbar';
+@import '_light';
 
 /* 
 
@@ -32,6 +40,7 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  transition: background 300ms;
 }
 
 .display-area {
@@ -53,7 +62,7 @@ a {
 
     h1 {
       font-size: 3rem;
-      color: #fff;
+      color: var(--text-color);
     }
   }
 }
@@ -73,10 +82,10 @@ a {
     border: 8px solid transparent;
 
     &:hover {
-      backdrop-filter: blur(16px) saturate(130%);
-      border: 8px solid $deepBlue;
+      backdrop-filter: blur(13px) saturate(130%);
+      border: 8px solid var(--box-border);
       z-index: 100;
-      box-shadow: 0 0 38px 3px #3789db;
+      box-shadow: 0 0 32px 2px var(--box-shadow);
       transform: scale(1.03);
     }
 
@@ -93,7 +102,7 @@ a {
 
       .option-title {
         font-weight: 600;
-        color: #cecece;
+        color: var(--option-title);
         font-size: 1.05rem;
         letter-spacing: 0.9px;
         margin-bottom: 0.2rem;
@@ -102,7 +111,7 @@ a {
       .option-subtitle {
         font-size: 1.01rem;
         font-weight: 490;
-        color: #e7e7e7b6;
+        color: var(--option-subtitle);
         letter-spacing: 0.7px;
       }
     }
@@ -110,20 +119,16 @@ a {
 }
 
 .recent-games {
-  backdrop-filter: blur(33px) saturate(105%);
+  backdrop-filter: blur(33px) saturate(105%) brightness(97%);
   padding: 7vh 0 10vh;
 
   .games-list {
     width: 87%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: 1fr;
+    // grid-auto-rows: 22vh;
     margin: 0 auto;
     gap: 0.3rem;
-
-    // @media (max-width: 600px) {
-    //   grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
-    // }
   }
 
   @media (min-width: 500px) {
@@ -142,10 +147,10 @@ a {
   cursor: pointer;
 
   &:hover {
-    outline: 9px solid $deepBlue;
+    outline: 9px solid var(--box-border);
     transform: scale(1.03);
     z-index: 3;
-    box-shadow: 0 0 49px 5px #3789db;
+    box-shadow: 0 0 49px 5px var(--box-shadow);
 
     .overlay {
       height: 30%;
@@ -177,7 +182,7 @@ a {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #2680da;
+    background: var(--overlay);
     width: 100%;
     height: 0;
     transition: height 300ms ease;
@@ -185,7 +190,7 @@ a {
   }
 
   .wide {
-    backdrop-filter: blur(50px) brightness(80%);
+    backdrop-filter: blur(50px) var(--blur-dark);
     background: transparent;
   }
 }
@@ -203,6 +208,7 @@ a {
   justify-content: center;
   background-repeat: no-repeat;
   padding: 5vh 8vw;
+  transition: background 300ms;
   background-image: var(--bg1);
   background-size: cover;
   background-position: center;
@@ -237,13 +243,13 @@ a {
     transition: border 100ms ease, box-shadow 200ms ease;
 
     &:hover {
-      border: 10px solid $deepBlue;
-      box-shadow: 0 0 36px 3px #3789db;
+      border: 10px solid var(--box-border);
+      box-shadow: 0 0 36px 3px var(--box-shadow);
     }
   }
 
   .info {
-    color: #f8f8f8;
+    color: var(--text-color-light);
     line-height: 1.4;
     letter-spacing: 0.7px;
     word-spacing: 1.1px;
@@ -257,16 +263,16 @@ a {
   p {
     padding: 14px;
     margin-bottom: 0.3rem;
-    backdrop-filter: blur(20px) brightness(80%);
-    color: #f8f8f8;
+    backdrop-filter: blur(20px) var(--blur-dark);
+    color: var(--text-color-light);
     cursor: pointer;
     transition: outline 100ms ease, box-shadow 200ms ease;
     // border: 10px solid transparent;
 
     &:hover {
       z-index: 3;
-      outline: 10px solid $deepBlue;
-      box-shadow: 0 0 36px 3px #3789db;
+      outline: 10px solid var(--box-border);
+      box-shadow: 0 0 36px 3px var(--box-shadow);
     }
   }
 }
@@ -288,8 +294,8 @@ a {
 
   &:hover {
     z-index: 3;
-    outline: 10px solid $deepBlue;
-    box-shadow: 0 0 36px 3px #3789db;
+    outline: 10px solid var(--box-border);
+    box-shadow: 0 0 36px 3px var(--box-shadow);
   }
 
   .game-name {
@@ -300,7 +306,7 @@ a {
   }
 
   .game-info {
-    backdrop-filter: blur(30px) brightness(95%);
+    backdrop-filter: blur(30px) var(--blur-dark);
     padding: 14px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -312,6 +318,13 @@ a {
       display: flex;
       justify-content: space-evenly;
       width: 100%;
+    }
+
+    .fa-heart {
+      cursor: pointer;
+      &.liked {
+        color: #ff62a1;
+      }
     }
 
     .p3 {
@@ -337,13 +350,14 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-image: var(--bg1);
+  transition: background 300ms;
   background-size: cover;
   min-height: 100vh;
 }
 
 .heading {
   font-size: 2.8rem;
-  color: #fff;
+  color: var(--text-color);
   margin-bottom: 2rem;
 
   h1 {
@@ -351,6 +365,7 @@ a {
   }
 
   p {
+    color: var(--text-color-light);
     font-size: 1.6rem;
   }
 }
@@ -359,6 +374,7 @@ a {
   display: grid;
   width: 100%;
   gap: 0.2rem;
+  grid-auto-rows: 21vh;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 
   // @media (max-width: 700px) {
@@ -367,8 +383,8 @@ a {
 }
 
 .add {
-  color: #fff;
-  backdrop-filter: blur(30px) brightness(70%);
+  color: var(--text-color);
+  backdrop-filter: blur(30px) var(--blur-light);
   cursor: pointer;
   padding: 15px;
   height: fit-content;
@@ -376,8 +392,8 @@ a {
 
   &:hover {
     z-index: 3;
-    outline: 10px solid $deepBlue;
-    box-shadow: 0 0 36px 3px #3789db;
+    outline: 10px solid var(--box-border);
+    box-shadow: 0 0 36px 3px var(--box-shadow);
     transform: scale(1.03);
   }
 
@@ -398,6 +414,7 @@ a {
   padding: 5vh 7vw;
   scroll-snap-align: start;
   justify-content: center;
+  transition: background 300ms;
   background-image: var(--bg1);
   background-size: cover;
   min-height: 100vh;
@@ -432,11 +449,11 @@ a {
     grid-column: span 3 / auto;
     height: 100%;
     width: 100%;
-    background-image: url('../assets/dead-rising.jpg');
+    background-image: url('../assets/game-pass/dead-rising.jpg');
     background-position: top;
     background-size: cover;
     box-shadow: inset 0 0 10px 0 #232323;
-    transition: outline 100ms ease, scale 200ms ease, box-shadow 300ms ease-in;
+    // transition: outline 100ms ease, scale 200ms ease, box-shadow 300ms ease-in;
     cursor: pointer;
 
     .content {
@@ -455,8 +472,8 @@ a {
 
     &:hover {
       z-index: 3;
-      outline: 8px solid $deepBlue;
-      box-shadow: 0 0 48px 5px #3789db;
+      outline: 8px solid var(--box-border);
+      box-shadow: 0 0 48px 5px var(--box-shadow);
       transform: scale(1.02);
     }
   }

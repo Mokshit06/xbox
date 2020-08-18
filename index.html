@@ -5,45 +5,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
   <script defer src="./js/app.js"></script>
   <title>Xbox</title>
 </head>
 
-<body class="light">
+<body>
   <nav-bar></nav-bar>
 
   <section id="home">
     <div class="display-area">
       <div class="header">
         <div class="title">
-          <h1>Forza Horizon 4</h1>
+          <h1 data-aos="fade-down">Forza Horizon 4</h1>
         </div>
 
         <div class="options-list">
           <div class="option">
-            <div class="img" style="background-image: url('./assets/game-forza.jpg');"></div>
+            <div class="img" style="background-image: url('./assets/options/game-forza.jpg');"></div>
             <div class="option-info">
               <div class="option-title">Forza Horizon 4</div>
               <div class="option-subtitle">Launch</div>
             </div>
           </div>
           <div class="option">
-            <div class="img" style="background-image: url('./assets/friend.png');"></div>
+            <div class="img" style="background-image: url('./assets/options/friend.png');"></div>
             <div class="option-info">
               <div class="option-title">Forza Horizon 4</div>
               <div class="option-subtitle">Launch</div>
             </div>
           </div>
           <div class="option">
-            <div class="img" style="background-image: url('./assets/help.jpg');"></div>
+            <div class="img" style="background-image: url('./assets/options/help.jpg');"></div>
             <div class="option-info">
               <div class="option-title">Forza Horizon 4</div>
               <div class="option-subtitle">Launch</div>
             </div>
           </div>
           <div class="option">
-            <div class="img" style="background-image: url('./assets/naruto.jpg');"></div>
+            <div class="img" style="background-image: url('./assets/options/naruto.jpg');"></div>
             <div class="option-info">
               <div class="option-title">Forza Horizon 4</div>
               <div class="option-subtitle">Launch</div>
@@ -55,19 +56,22 @@
 
     <div class="recent-games">
       <div class="games-list">
-        <game-item text="My games and <br /> apps" full="true"></game-item>
-        <game-item></game-item>
-        <game-item></game-item>
-        <game-item class="game-wide" image="slime-rancher.jpg" wide="true" text="New Games with Gold">
+        <game-item data-aos="fade-up" text="My games and <br /> apps" full="true"></game-item>
+        <game-item data-aos="fade-up" data-aos-delay="50" image="recent/rocket.jpg"></game-item>
+        <game-item data-aos="fade-up" data-aos-delay="100" image="recent/halo.jpg"></game-item>
+        <game-item data-aos="fade-up" data-aos-delay="150" image="pins/overwatch.jpg"></game-item>
+        <game-item class=" game-wide" data-aos="fade-up" data-aos-delay="200" image="recent/slime-rancher.jpg"
+          wide="true" text="New Games with Gold">
         </game-item>
-        <game-item class="game-wide" image="fortnite.png" wide="true" text="Fortnite on Xbox"></game-item>
+        <game-item data-aos="fade-up" data-aos-delay="250" class="game-wide" image="recent/fortnite.png" wide="true"
+          text="Fortnite on Xbox"></game-item>
       </div>
     </div>
   </section>
 
   <section id="about-wrapper">
     <div class="about">
-      <div class="user">
+      <div class="user" data-aos="fade-up">
         <img src="./assets/avatar.png" alt="Avatar">
         <div class="info">
           <p>Last seen 17h ago:</p>
@@ -75,21 +79,21 @@
           <p>Collection</p>
         </div>
       </div>
-      <div class="invite">
+      <div class="invite" data-aos="fade-down">
         <p>Send a message</p>
         <p>Invite to a party</p>
       </div>
-      <div class="game-area">
+      <div class="game-area" data-aos="fade-up">
         <h1 class="game-name">
           Bane of the Kell - Destiny
         </h1>
         <div class="game-info">
           <div class="game-review">
-            <div class="review-item">
+            <div>
               <i class="far fa-heart"></i>
               503
             </div>
-            <div class="review-item">
+            <div>
               <i class="far fa-comment-alt"></i>
               36
             </div>
@@ -105,69 +109,77 @@
   </section>
 
   <section id="pins">
-    <h1 class="heading">
+    <h1 class="heading" data-aos="fade-down">
       Pins
     </h1>
     <div class="games-grid">
-      <game-item image="pins.jpg"></game-item>
-      <game-item image="ghost-recon.jpg" text="Ghost Recon"></game-item>
+      <game-item image="pins/pins.jpg"></game-item>
+      <game-item image="pins/ghost-recon.jpg" text="Ghost Recon"></game-item>
       <game-item image="bane-of-kell.jpg" text="Bane of Kell"></game-item>
-      <game-item image="golf.jpg" text="The Golf Club"></game-item>
-      <game-item image="overwatch.jpg" text="Overwatch"></game-item>
-      <game-item image="my-games-icon.png" text="Witcher"></game-item>
-      <game-item image="my-games-icon.png" text="Microsoft Edge"></game-item>
+      <game-item image="pins/golf.jpg" text="The Golf Club"></game-item>
+      <game-item image="pins/overwatch.jpg" text="Overwatch"></game-item>
+      <game-item image="pins/witcher.jpg" text="Witcher"></game-item>
+      <game-item image="pins/edge.jpg" text="Microsoft Edge"></game-item>
       <div class="add">
         Add to Home
       </div>
-      <game-item image="my-games-icon.png" text="Halo Wars"></game-item>
-      <game-item image="quantam.jpg" text="Quantam Break"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
-      <game-item image="my-games-icon.png" text="Red Dead Redemption"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
-      <game-item image="my-games-icon.png"></game-item>
+      <game-item image="pins/halo-2.jpg" text="Halo Wars"></game-item>
+      <game-item image="pins/quantam.jpg" text="Quantam Break"></game-item>
+      <game-item image="pins/game.jpg" text=""></game-item>
+      <game-item image="pins/red.jpg" text="Red Dead Redemption"></game-item>
+      <game-item image="recent/halo.jpg" text="Halo 5"></game-item>
+      <game-item image="recent/rocket.jpg" text="Rocket League"></game-item>
+      <game-item image="pins/superhot.jpg" text="Superhot"></game-item>
+      <game-item image="pins/division.jpg"></game-item>
+      <game-item image="pins/fallout.png" text="Fallout 4"></game-item>
+      <game-item image="pins/rainbow-siege.jpg" text="Rainbow Siege"></game-item>
+      <game-item image="pins/halo-master.jpg" text="Halo the Master Chief Collection"></game-item>
+      <game-item image="pins/upload.png" text="Upload Studio"></game-item>
     </div>
   </section>
 
   <section id="game-pass">
-    <div class="heading">
+    <div class="heading" data-aos="fade-down">
       <h1>Xbox Game Pass</h1>
       <p>Suggested</p>
     </div>
     <div class="game-pass-grid">
-      <div class="game-pass-icon">
-        <game-item image="xbox.jpeg"></game-item>
+      <div class="game-pass-icon" data-aos="fade-up">
+        <game-item image="game-pass/xbox.jpeg"></game-item>
         <div class="add">
           Add to Home
         </div>
       </div>
-      <div class="game-pass-item">
+      <div class="game-pass-item" data-aos="fade-up" data-aos-delay="50">
         <div class="content">
           Dead Rising 3
         </div>
       </div>
-      <div class="game-pass-item">
+      <div class="game-pass-item" style="background-image: url('./assets/game-pass/nba.jpg');" data-aos="fade-up"
+        data-aos-delay="100">
         <div class="content">
-          Dead Rising 3
+          NBA 2K16
         </div>
       </div>
-      <div class="game-pass-item">
+      <div class="game-pass-item" style="background-image: url('./assets/game-pass/saints-row.jpg');" data-aos="fade-up"
+        data-aos-delay="150">
         <div class="content">
-          Dead Rising 3
+          Saints Row IV: Re-Elected
         </div>
       </div>
-      <div class="game-pass-item">
+      <div class="game-pass-item" style="background-image: url('./assets/game-pass/dirt-rally.jpg');" data-aos="fade-up"
+        data-aos-delay="200">
         <div class="content">
-          Dead Rising 3
+          DiRT Rally
         </div>
       </div>
     </div>
   </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>

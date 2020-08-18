@@ -15,7 +15,7 @@ class NavBar extends HTMLElement {
           <a href="/library.html">Library</a>
           <a href="#">Community</a>
           <a href="#">Entertainment</a>
-          <a href="#">Store</a>
+          <i class="far fa-moon toggle"></i>
         </div>
         <div class="nav-info">
           <i class="fas fa-microphone-slash"></i>
@@ -94,3 +94,17 @@ const handleScroll = () => {
 };
 
 window.addEventListener('scroll', handleScroll);
+
+const likeBtn = document.querySelector('.far.fa-heart');
+
+likeBtn.addEventListener('click', () => {
+  likeBtn.classList.toggle('fas');
+  likeBtn.classList.toggle('liked');
+});
+
+const toggleTheme = document.querySelector('.toggle');
+
+toggleTheme.addEventListener('click', () => {
+  document.querySelector('body').classList.toggle('light');
+  toggleTheme.classList.toggle('fa-sun');
+});
