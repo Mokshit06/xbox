@@ -3,6 +3,11 @@ class NavBar extends HTMLElement {
     super();
     this.innerHTML = `
       <nav>
+        <div class="hamburger">
+          <div class="line-1"></div>
+          <div class="line-2"></div>
+          <div class="line-3"></div>
+        </div>
         <div class="avatar">
           <img src="./assets/avatar.png" alt="avatar"/>
           <div class="avatar-info">
@@ -58,6 +63,36 @@ class GridItem extends HTMLElement {
 window.customElements.define('nav-bar', NavBar);
 window.customElements.define('game-item', GridItem);
 
+const navBar = document.querySelector('nav');
+let isScrolledDown = false;
+const handleScroll = () => {
+  const navHeight = navBar.clientHeight;
+  if (window.scrollY > navHeight) {
+    navBar.classList.add('scrolled-down');
+    isScrolledDown = true;
+  } else {
+    navBar.classList.remove('scrolled-down');
+    isScrolledDown = false;
+  }
+};
+
+window.addEventListener('scroll', handleScroll);
+
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const links = document.querySelectorAll('.nav-links a');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  links.forEach(link => {
+    link.classList.toggle('fade');
+  });
+  if (isScrolledDown) {
+    navBar.classList.toggle('scrolled-down');
+  }
+  hamburger.classList.toggle('nav-toggle');
+});
+
 const time = document.querySelector('.nav-time');
 
 const setTime = () => {
@@ -81,19 +116,6 @@ const setTime = () => {
 setTime();
 
 setInterval(setTime, 5000);
-
-const navBar = document.querySelector('nav');
-const handleScroll = () => {
-  const navHeight = navBar.clientHeight;
-  console.log(navHeight);
-  if (window.scrollY > navHeight) {
-    navBar.classList.add('scrolled-down');
-  } else {
-    navBar.classList.remove('scrolled-down');
-  }
-};
-
-window.addEventListener('scroll', handleScroll);
 
 const likeBtn = document.querySelector('.far.fa-heart');
 

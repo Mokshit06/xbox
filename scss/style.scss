@@ -21,6 +21,7 @@ a {
   --blur-dark: brightness(80%);
   --blur-light: brightness(70%);
   --theme: #232323;
+  --bg-color: rgba(35, 35, 35, 0.4);
 }
 
 @import '_navbar';
@@ -59,10 +60,23 @@ a {
     align-items: center;
     justify-content: center;
     flex: 1;
+    text-align: center;
+
+    @media (max-width: 620px) {
+      margin: 3rem 1.5rem;
+    }
+
+    @media (max-width: 520px) {
+      margin: 4rem 1.5rem;
+    }
 
     h1 {
       font-size: 3rem;
       color: var(--text-color);
+
+      @media (max-width: 600px) {
+        font-size: 2.7rem;
+      }
     }
   }
 }
@@ -226,21 +240,24 @@ a {
   gap: 0.5rem;
   align-items: start;
   grid-auto-rows: 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
 .user {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 1.5rem;
 
   img {
     margin: 0 0 1.3rem;
     border-radius: 50%;
-    height: 18vw;
+    height: 23vh;
     border: 10px solid transparent;
     transition: border 100ms ease, box-shadow 200ms ease;
+
+    @media (max-width: 500px) {
+      height: 25vh;
+    }
 
     &:hover {
       border: 10px solid var(--box-border);
@@ -288,7 +305,7 @@ a {
   flex-direction: column;
   transition: outline 100ms ease, box-shadow 200ms ease;
 
-  @media (min-width: 400px) {
+  @media (min-width: 600px) {
     grid-column: span 2 / auto;
   }
 
@@ -377,9 +394,9 @@ a {
   grid-auto-rows: 21vh;
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 
-  // @media (max-width: 700px) {
-  //   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  // }
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
 }
 
 .add {
@@ -432,11 +449,14 @@ a {
   .game-pass-icon {
     display: flex;
     flex-direction: column;
-    margin-right: 1rem;
     grid-column: span 4 / auto;
 
     .add {
       margin-top: 1rem;
+    }
+
+    @media (min-width: 800px) {
+      margin-right: 1rem;
     }
 
     @media (max-width: 800px) {
