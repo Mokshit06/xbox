@@ -1,29 +1,4 @@
 @import '_base';
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  scroll-snap-type: y mandatory;
-}
-
-a {
-  text-decoration: none !important;
-}
-
-:root {
-  --bg1: url('../assets/blur-cover.jpg');
-  --text-color: #fff;
-  --text-color-light: #f8f8f8;
-  --option-title: #cecece;
-  --option-subtitle: #e7e7e7b6;
-  --box-shadow: #3789db;
-  --box-border: #418ad4;
-  --overlay: #2680da;
-  --blur-dark: brightness(80%);
-  --blur-light: brightness(70%);
-  --theme: #232323;
-  --bg-color: rgba(35, 35, 35, 0.4);
-}
-
 @import '_navbar';
 @import '_light';
 
@@ -113,6 +88,7 @@ a {
 
     .option-info {
       padding: 14.8px;
+      width: 75%;
 
       .option-title {
         font-weight: 600;
@@ -125,8 +101,11 @@ a {
       .option-subtitle {
         font-size: 1.01rem;
         font-weight: 490;
+        white-space: nowrap;
+        overflow: hidden;
         color: var(--option-subtitle);
-        letter-spacing: 0.7px;
+        letter-spacing: 0.6px;
+        text-overflow: ellipsis;
       }
     }
   }
@@ -149,63 +128,6 @@ a {
     .game-wide {
       grid-column: span 2 / auto;
     }
-  }
-}
-
-.wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  margin: 0;
-  transition: box-shadow 200ms ease-in, scale 300ms ease-out;
-  cursor: pointer;
-
-  &:hover {
-    outline: 9px solid var(--box-border);
-    transform: scale(1.03);
-    z-index: 3;
-    box-shadow: 0 0 49px 5px var(--box-shadow);
-
-    .overlay {
-      height: 30%;
-    }
-
-    .full {
-      height: 100%;
-    }
-  }
-
-  img {
-    height: 100%;
-    display: block;
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .content {
-    position: absolute;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    color: #fff;
-  }
-
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--overlay);
-    width: 100%;
-    height: 0;
-    transition: height 300ms ease;
-    overflow: hidden;
-  }
-
-  .wide {
-    backdrop-filter: blur(50px) var(--blur-dark);
-    background: transparent;
   }
 }
 

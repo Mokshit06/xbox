@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  transition: background 200ms;
   box-sizing: border-box;
 }
 
@@ -14,4 +15,28 @@
 
 ::-webkit-scrollbar-track {
   background: #cacaca;
+}
+
+:root {
+  --bg1: url('../assets/blur-cover.jpg');
+  --text-color: #fff;
+  --text-color-light: #f8f8f8;
+  --option-title: #cecece;
+  --option-subtitle: #e7e7e7b6;
+  --box-shadow: #3789db;
+  --box-border: #418ad4;
+  --overlay: #2680da;
+  --blur-dark: brightness(80%);
+  --blur-light: brightness(70%);
+  --theme: #2b2b2b;
+  --bg-color: rgba(35, 35, 35, 0.5);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-snap-type: y mandatory;
+}
+
+a {
+  text-decoration: none !important;
 }

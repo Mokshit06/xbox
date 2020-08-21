@@ -32,22 +32,22 @@
           <div class="option">
             <div class="img" style="background-image: url('./assets/options/friend.png');"></div>
             <div class="option-info">
-              <div class="option-title">Forza Horizon 4</div>
-              <div class="option-subtitle">Launch</div>
+              <div class="option-title">Suggested Friends</div>
+              <div class="option-subtitle">Sahiljain06</div>
             </div>
           </div>
           <div class="option">
             <div class="img" style="background-image: url('./assets/options/help.jpg');"></div>
             <div class="option-info">
-              <div class="option-title">Forza Horizon 4</div>
-              <div class="option-subtitle">Launch</div>
+              <div class="option-title">Tips and Tricks</div>
+              <div class="option-subtitle">Remap the button to get the most out of the game</div>
             </div>
           </div>
           <div class="option">
             <div class="img" style="background-image: url('./assets/options/naruto.jpg');"></div>
             <div class="option-info">
-              <div class="option-title">Forza Horizon 4</div>
-              <div class="option-subtitle">Launch</div>
+              <div class="option-title">Dealks</div>
+              <div class="option-subtitle">Dont miss out on great anime deals.</div>
             </div>
           </div>
         </div>
@@ -56,10 +56,12 @@
 
     <div class="recent-games">
       <div class="games-list">
-        <game-item data-aos="fade-up" text="My games and <br /> apps" full="true"></game-item>
-        <game-item data-aos="fade-up" data-aos-delay="50" image="recent/rocket.jpg"></game-item>
-        <game-item data-aos="fade-up" data-aos-delay="100" image="recent/halo.jpg"></game-item>
-        <game-item data-aos="fade-up" data-aos-delay="150" image="pins/overwatch.jpg"></game-item>
+        <a href="/library.html">
+          <game-item data-aos="fade-up" text="My games and <br /> apps" full="true"></game-item>
+        </a>
+        <game-item data-aos="fade-up" data-aos-delay="50" image="recent/rocket.jpg" text="Rocket League"></game-item>
+        <game-item data-aos="fade-up" data-aos-delay="100" image="recent/halo.jpg" text="Halo 5"></game-item>
+        <game-item data-aos="fade-up" data-aos-delay="150" image="pins/overwatch.jpg" text="Overwatch"></game-item>
         <game-item class=" game-wide" data-aos="fade-up" data-aos-delay="200" image="recent/slime-rancher.jpg"
           wide="true" text="New Games with Gold">
         </game-item>
@@ -130,7 +132,7 @@
       <game-item image="recent/halo.jpg" text="Halo 5"></game-item>
       <game-item image="recent/rocket.jpg" text="Rocket League"></game-item>
       <game-item image="pins/superhot.jpg" text="Superhot"></game-item>
-      <game-item image="pins/division.jpg"></game-item>
+      <game-item image="pins/division.jpg" text="The Division"></game-item>
       <game-item image="pins/fallout.png" text="Fallout 4"></game-item>
       <game-item image="pins/rainbow-siege.jpg" text="Rainbow Siege"></game-item>
       <game-item image="pins/halo-master.jpg" text="Halo the Master Chief Collection"></game-item>
@@ -178,7 +180,9 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      disable: 'mobile'
+    });
   </script>
 </body>
 

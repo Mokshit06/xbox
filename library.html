@@ -6,16 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/library.css">
   <script defer src="./js/library.js"></script>
+  <script defer src="./js/app.js"></script>
   <title>Game Library | Xbox</title>
 </head>
 
 <body>
 
+  <nav-bar></nav-bar>
   <div class="side-bar">
     <div class="top-area">
       <div class="icon">
         <a href="/">
-          <img src="./assets/dark-library-icon.png" alt="">
+          <img src="./assets/home-transparent.png" alt="">
         </a>
       </div>
       <div class="tabs">
@@ -62,54 +64,26 @@
     <div class="alphabet-section">
       <div class="letter">A</div>
       <div class="section-games">
-        <div class="wrapper">
-          <img src="./assets/destiny.jpg" alt="">
-          <div class="overlay">
-            <div class="content">
-              Destiny
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <img src="./assets/destiny.jpg" alt="">
-          <div class="overlay">
-            <div class="content">
-              Destiny
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <img src="./assets/destiny.jpg" alt="">
-          <div class="overlay">
-            <div class="content">
-              Destiny
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <img src="./assets/destiny.jpg" alt="">
-          <div class="overlay">
-            <div class="content">
-              Destiny
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <img src="./assets/destiny.jpg" alt="">
-          <div class="overlay">
-            <div class="content">
-              Destiny
-            </div>
-          </div>
-        </div>
-        <div class="wrapper">
-          <img src="./assets/destiny.jpg" alt="">
-          <div class="overlay">
-            <div class="content">
-              Destiny
-            </div>
-          </div>
-        </div>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+      </div>
+    </div>
+    <div class="alphabet-section">
+      <div class="letter">B</div>
+      <div class="section-games">
+      </div>
+    </div>
+    <div class="alphabet-section">
+      <div class="letter">C</div>
+      <div class="section-games">
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
       </div>
     </div>
   </template>

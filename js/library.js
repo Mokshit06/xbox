@@ -1,3 +1,11 @@
+window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('theme')) {
+    document.body.classList.add('light');
+    const image = (document.querySelector('.icon img').src =
+      './assets/home-light.png');
+  }
+});
+
 const graph = document.querySelector('#graph');
 
 const options = {
@@ -33,8 +41,16 @@ const drawCircle = function (color, lineWidth, percent) {
   ctx.stroke();
 };
 
-drawCircle('#333', options.lineWidth, 100 / 100);
-drawCircle('#0c5395', options.lineWidth, options.percent / 100);
+const color = getComputedStyle(document.body)
+  .getPropertyValue('--box-border')
+  .trim();
+
+const borderColor = getComputedStyle(document.body)
+  .getPropertyValue('--tab-bg')
+  .trim();
+
+drawCircle(borderColor, options.lineWidth, 100 / 100);
+drawCircle(color, options.lineWidth, options.percent / 100);
 
 const rightSection = document.querySelector('.right-section');
 

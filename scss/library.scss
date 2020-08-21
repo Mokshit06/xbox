@@ -1,16 +1,34 @@
 $graph-size: 76px;
 
 @import '_base';
+@import '_light';
+@import '_navbar';
+
+:root {
+  --bg-color: #232323;
+  --border-color: #383838;
+  --tab-bg: #525052;
+  --tab-hover: #3f3d3f;
+}
+
+.light {
+  --bg-color: #fafafa;
+  --border-color: #dfdfdf;
+  --tab-bg: #eaeaea;
+  --tab-hover: #f0f0f0;
+}
 
 body {
-  background: #2c2b2c;
+  background: var(--bg-color);
   height: 100vh;
   display: flex;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.libary-section {
-  background: white;
+nav {
+  @media (min-width: 770px) {
+    display: none;
+  }
 }
 
 .side-bar {
@@ -18,8 +36,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 2px solid rgb(65, 65, 65);
+  border-right: 1.7px solid var(--border-color);
   justify-content: space-between;
+
+  @media (max-width: 770px) {
+    display: none;
+  }
 }
 
 .top-area {
@@ -27,19 +49,20 @@ body {
 }
 
 .icon {
-  width: 57%;
-  height: 38%;
+  width: 21%;
+  height: 50%;
+  margin: 0 auto 0 5rem;
 
   img {
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
   }
 }
 
 .tabs {
   width: 100%;
-  color: #fff;
+  color: var(--text-color-light);
 
   .tab {
     width: 100%;
@@ -52,13 +75,23 @@ body {
     cursor: pointer;
     transition: background 200ms ease;
 
+    @media (max-width: 1150px) {
+      padding: 0.87rem 2.6rem;
+    }
+
     &:hover {
-      background: #414041de;
-      border-right: 5px solid #0e64b498;
+      background: var(--tab-hover);
+      border-right: 5px solid var(--box-shadow);
     }
     &.active {
-      background: #525052;
-      border-right: 5px solid #0c5395;
+      background: var(--tab-bg);
+      border-right: 5px solid var(--overlay);
+    }
+
+    .count {
+      @media (max-width: 980px) {
+        display: none;
+      }
     }
   }
 }
@@ -69,12 +102,16 @@ body {
   justify-content: space-around;
   margin: 5vh 0;
   width: 80%;
-  color: #fff;
+  color: var(--text-color-light);
 }
 
 .storage {
   line-height: 1.8;
   font-size: 1rem;
+
+  @media (max-width: 1150px) {
+    display: none;
+  }
 }
 
 .circle-graph {
@@ -91,7 +128,7 @@ canvas {
 }
 
 .storage-percent {
-  color: rgb(226, 226, 226);
+  color: var(--text-color-light);
   display: block;
   line-height: $graph-size;
   width: $graph-size;
@@ -105,7 +142,11 @@ canvas {
 .right-section {
   width: calc(100vw - 24vw);
   padding: 0 8vw;
-  overflow-y: scroll;
+  overflow-y: auto;
+
+  @media (max-width: 770px) {
+    width: 100vw;
+  }
 }
 
 .alphabet-section {
@@ -114,60 +155,21 @@ canvas {
   margin: 8vh 0;
 
   .letter {
-    color: #fff;
+    color: var(--text-color);
     font-size: 1.8rem;
-    font-weight: 300;
+    font-weight: 400;
     text-transform: uppercase;
     margin: 0 0 4vh;
   }
 
   .section-games {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    // grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0.4rem;
 
-    .wrapper {
-      width: 100%;
-      position: relative;
-      margin: 0;
-      transition: box-shadow 200ms ease-in, scale 300ms ease-out;
-      cursor: pointer;
-
-      &:hover {
-        outline: 8px solid #418ad4;
-        transform: scale(1.02);
-        z-index: 3;
-        box-shadow: 0 0 49px 5px #3789db;
-
-        .overlay {
-          height: 30%;
-        }
-      }
-
-      img {
-        height: auto;
-        display: block;
-        width: 100%;
-      }
-
-      .content {
-        position: absolute;
-        top: 45%;
-        left: 25%;
-        transform: translate(-50%, -50%);
-      }
-
-      .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #2680da;
-        width: 100%;
-        height: 0;
-        transition: height 300ms ease;
-        overflow: hidden;
-      }
+    @media (max-width: 550px) {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
 
     .game {
