@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/game.css">
   <script defer src="./js/app.js"></script>
   <script defer src="./js/game.js"></script>
+  <link rel="icon" href="./assets/logo.webp">
   <title>Minecraft</title>
 </head>
 
@@ -16,14 +18,12 @@
 
   <nav-bar></nav-bar>
 
-  <div class="video-wrapper">
-    <video src="./assets/video/minecraft.mp4" loop autoplay></video>
-    <!-- <iframe src="https://www.youtube.com/embed/1DhWXAiNgfQ?controls=0&autoplay=1" frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope"></iframe> -->
+  <div class="video-wrapper" data-aos="fade-down">
+    <video src="./assets/game/minecraft.mp4" loop autoplay></video>
   </div>
 
   <div class="center-area">
-    <div class="game-info-wrapper">
+    <div class="game-info-wrapper" data-aos="fade-up" data-aos-delay="100">
       <div class="game-img"></div>
       <div class="game-center">
         <h1 class="game-title">
@@ -51,7 +51,7 @@
           <i class="material-icons">star</i>
           <i class="material-icons">star</i>
         </div>
-        <img class="age-rating" src="./assets/iarc.jpeg" />
+        <img class="age-rating" src="./assets/game/iarc.jpeg" />
         <p class="game-text">
           Create anything you can imagine. Explore randomly generated worlds. Survive dangerous mobs at night. This
           collection
@@ -68,6 +68,12 @@
     </div>
   </div>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      disable: 'mobile'
+    });
+  </script>
 </body>
 
 </html>

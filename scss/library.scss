@@ -164,34 +164,12 @@ canvas {
 
   .section-games {
     display: grid;
-    // grid-template-columns: repeat(4, 1fr);
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0.4rem;
+    grid-auto-rows: 27vh;
 
     @media (max-width: 550px) {
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    }
-
-    .game {
-      background-image: url('../assets/destiny.jpg');
-      background-position: center;
-      padding-top: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      transition: all 100ms ease-in-out, box-shadow 200ms ease-in,
-        scale 300ms ease-out;
-      cursor: pointer;
-
-      &:hover {
-        outline: 8px solid #418ad4;
-        box-shadow: 0 0 49px 5px #3789db, inset 0px -48px 0px 0px #2680da;
-        z-index: 2;
-        transform: scale(1.02);
-      }
-
-      &:nth-child(2) {
-        background-image: url('../assets/doom.jpg');
-      }
     }
   }
 }

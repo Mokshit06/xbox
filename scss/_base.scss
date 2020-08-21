@@ -5,6 +5,8 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 ::-webkit-scrollbar {
   width: 11px;
 }
@@ -32,9 +34,14 @@
   --bg-color: rgba(35, 35, 35, 0.5);
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body,
+html {
+  font-family: 'Source Sans Pro', sans-serif;
   scroll-snap-type: y mandatory;
+}
+
+body {
+  position: relative;
 }
 
 a {

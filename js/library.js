@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('theme')) {
     document.body.classList.add('light');
     const image = (document.querySelector('.icon img').src =
-      './assets/home-light.png');
+      './assets/library/home-light.png');
   }
 });
 

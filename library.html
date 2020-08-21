@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/library.css">
-  <script defer src="./js/library.js"></script>
   <script defer src="./js/app.js"></script>
+  <script defer src="./js/library.js"></script>
+  <link rel="icon" href="./assets/logo.webp">
   <title>Game Library | Xbox</title>
 </head>
 
@@ -17,7 +19,7 @@
     <div class="top-area">
       <div class="icon">
         <a href="/">
-          <img src="./assets/home-transparent.png" alt="">
+          <img src="./assets/library/home-transparent.png" alt="">
         </a>
       </div>
       <div class="tabs">
@@ -64,26 +66,30 @@
     <div class="alphabet-section">
       <div class="letter">A</div>
       <div class="section-games">
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-      </div>
-    </div>
-    <div class="alphabet-section">
-      <div class="letter">B</div>
-      <div class="section-games">
+        <game-item link="true" text="Assassin's Creed Valhalla" image="library/assassin.jpg">
+        </game-item>
+        <game-item link="true" text="Astroneer" image="library/astroneer.jpg"></game-item>
+        <game-item link="true" text="Assassin's Creed: Odyssey" image="library/assassin2.png"></game-item>
+        <game-item link="true" text="Assassin's Creed: Syndicate" image="library/assassin3.jpg"></game-item>
+        <game-item link="true" text="Asseto Corsa" image="library/asseto.jpg"></game-item>
+        <game-item link="true" text="AO Tennis" image="library/aotennis.jpg"></game-item>
+        <game-item link="true" text="Agents of Mayhem" image="library/mayhem.png"></game-item>
       </div>
     </div>
     <div class="alphabet-section">
       <div class="letter">C</div>
       <div class="section-games">
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
-        <game-item link="true" text="Destiny" image="destiny.jpg"></game-item>
+        <game-item link="true" text="Call of Duty: Infinite Warfare" image="library/callofduty.jpg"></game-item>
+        <game-item link="true" text="Call of Duty: Black Ops III" image="library/callofduty2.jpg"></game-item>
+        <game-item link="true" text="Call of Duty: Modern Warfare" image="library/callofduty3.jpg"></game-item>
+      </div>
+    </div>
+    <div class="alphabet-section">
+      <div class="letter">D</div>
+      <div class="section-games">
+        <game-item link="true" text="Dirt Rally" image="game-pass/dirt-rally.jpg"></game-item>
+        <game-item link="true" text="Destiny" image="library/destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny 2" image="library/destiny2.jpg"></game-item>
       </div>
     </div>
   </template>
@@ -92,33 +98,35 @@
     <div class="alphabet-section">
       <div class="letter">A</div>
       <div class="section-games">
-        <div class="game"></div>
-        <div class="game"></div>
-        <div class="game"></div>
-        <div class="game"></div>
-        <div class="game"></div>
-        <div class="game"></div>
+        <game-item link="true" text="Asseto Corsa" image="library/asseto.jpg"></game-item>
+        <game-item link="true" text="Assassin's Creed: Odyssey" image="library/assassin2.png"></game-item>
+        <game-item link="true" text="Astroneer" image="library/astroneer.jpg"></game-item>
+        <game-item link="true" text="Assassin's Creed: Syndicate" image="library/assassin3.jpg"></game-item>
+        <game-item link="true" text="Agents of Mayhem" image="library/mayhem.png"></game-item>
+        <game-item link="true" text="AO Tennis" image="library/aotennis.jpg"></game-item>
+        <game-item link="true" text="Assassin's Creed Chronicles: India" image="library/assassin4.jpg"></game-item>
       </div>
     </div>
     <div class="alphabet-section">
-      <div class="letter">B</div>
+      <div class="letter">D</div>
       <div class="section-games">
-        <div class="game"></div>
-        <div class="game"></div>
-      </div>
-    </div>
-    <div class="alphabet-section">
-      <div class="letter">C</div>
-      <div class="section-games">
-        <div class="game"></div>
-        <div class="game"></div>
-        <div class="game"></div>
-        <div class="game"></div>
+        <game-item link="true" text="Destiny" image="library/destiny.jpg"></game-item>
+        <game-item link="true" text="Destiny 2" image="library/destiny2.jpg"></game-item>
+        <game-item link="true" text="Dirt Rally" image="game-pass/dirt-rally.jpg"></game-item>
+        <game-item link="true" text="Dirt Rally" image="library/dirt4.jpg"></game-item>
       </div>
     </div>
   </template>
 
   </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      disable: 'mobile'
+    });
+  </script>
+
 
 </body>
 

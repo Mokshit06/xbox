@@ -2,21 +2,34 @@
 @import '_navbar';
 @import '_light';
 
-/* 
+@mixin section {
+  display: flex;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 5vh 8vw;
+  background-image: var(--bg1);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 
-  Home section
+  @media (min-width: 900px) {
+    scroll-snap-align: start;
+  }
+}
 
-*/
+// Home Section
 
 #home {
   background-attachment: fixed;
   background-image: var(--bg1);
   background-position: center;
-  scroll-snap-align: start;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  transition: background 300ms;
+
+  @media (min-width: 900px) {
+    scroll-snap-align: start;
+  }
 }
 
 .display-area {
@@ -46,7 +59,7 @@
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.3rem;
       color: var(--text-color);
 
       @media (max-width: 600px) {
@@ -71,7 +84,7 @@
     border: 8px solid transparent;
 
     &:hover {
-      backdrop-filter: blur(13px) saturate(130%);
+      backdrop-filter: blur(9px) saturate(130%);
       border: 8px solid var(--box-border);
       z-index: 100;
       box-shadow: 0 0 32px 2px var(--box-shadow);
@@ -131,24 +144,11 @@
   }
 }
 
-/*
-
-  About section
-
-*/
+// About Section
 #about-wrapper {
-  display: flex;
-  background-attachment: fixed;
+  @include section;
   align-items: center;
-  scroll-snap-align: start;
   justify-content: center;
-  background-repeat: no-repeat;
-  padding: 5vh 8vw;
-  transition: background 300ms;
-  background-image: var(--bg1);
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
 
   @media (max-width: 700px) {
     align-items: flex-start;
@@ -225,8 +225,7 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  transition: outline 100ms ease, box-shadow 200ms ease;
-
+  transition: outline 100ms ease, box-shadow 300ms !important;
   @media (min-width: 600px) {
     grid-column: span 2 / auto;
   }
@@ -273,25 +272,13 @@
   }
 }
 
-/* 
+// Pins Section
 
-  Pins section
-
-*/
 #pins {
-  display: flex;
-  background-attachment: fixed;
+  @include section;
   align-items: flex-start;
-  scroll-snap-align: start;
   flex-direction: column;
   justify-content: center;
-  padding: 5vh 7vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: var(--bg1);
-  transition: background 300ms;
-  background-size: cover;
-  min-height: 100vh;
 }
 
 .heading {
@@ -341,23 +328,11 @@
   }
 }
 
-/* 
-
-  Game pass section
-
-*/
+// Game pass Section
 #game-pass {
-  display: flex;
-  background-attachment: fixed;
+  @include section;
   align-items: flex-start;
-  padding: 5vh 7vw;
-  scroll-snap-align: start;
   justify-content: center;
-  transition: background 300ms;
-  background-image: var(--bg1);
-  background-size: cover;
-  min-height: 100vh;
-  background-position: center;
   flex-direction: column;
 }
 
@@ -418,5 +393,59 @@
       box-shadow: 0 0 48px 5px var(--box-shadow);
       transform: scale(1.02);
     }
+  }
+}
+
+#videos {
+  @include section;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (max-width: 1100px) {
+    padding-bottom: 20%;
+  }
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  grid-gap: 1.6rem;
+
+  .video-item {
+    padding-top: 56.25%;
+    position: relative;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      transition: transform 300ms;
+
+      &:hover {
+        outline: 9px solid var(--box-border);
+        transform: scale(1.03);
+        z-index: 3;
+        box-shadow: 0 0 49px 5px var(--box-shadow);
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  background: var(--bg-color);
+  z-index: 10;
+
+  p {
+    color: var(--text-color);
+    font-size: 1.15rem;
+    text-align: center;
   }
 }

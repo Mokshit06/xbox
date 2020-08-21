@@ -130,7 +130,7 @@ class GridItem extends HTMLElement {
   constructor() {
     super();
 
-    const image = this.getAttribute('image') || 'my-games-icon.png';
+    const image = this.getAttribute('image') || 'recent/my-games-icon.png';
     const text = this.getAttribute('text');
     const full = this.getAttribute('full');
     const wide = this.getAttribute('wide');
@@ -158,7 +158,7 @@ class GridItem extends HTMLElement {
         .wrapper {
           width: 100%;
           height: 100%;
-          position: relative;
+          position: relative !important;
           margin: 0;
           transition: box-shadow 200ms ease-in, scale 300ms ease-out;
           cursor: pointer;
@@ -172,7 +172,7 @@ class GridItem extends HTMLElement {
         }
         
         .wrapper:hover .overlay {
-          height: 30%;
+          ${link ? 'height: 22%' : 'height: 30%;'}
         }
       
         .wrapper:hover .full {
@@ -211,11 +211,15 @@ class GridItem extends HTMLElement {
           backdrop-filter: blur(50px) var(--blur-dark);
           background: transparent;
         }
+
+        .top {
+          object-position: top;
+        }
       </style>
 
       ${link ? '<a href="/game.html">' : ''}
       <div class="wrapper">
-        <img src="./assets/${image}" alt="">
+        <img ${link ? 'class="top"' : ''} src="./assets/${image}" alt="">
         ${
           text
             ? `
